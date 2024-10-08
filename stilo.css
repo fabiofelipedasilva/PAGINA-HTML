@@ -1,0 +1,158 @@
+
+@media only screen and (max-width: 700px) {
+    
+  }
+  
+ 
+body {    
+    background: url(IMG/fundo1.jpg) fixed;
+   
+    
+    }
+
+
+header {    
+    border-radius: 25px 10px;
+    padding: 4px;
+    margin:40px;
+    background-color: rgb(218, 28, 22);
+    border: 2px solid black;
+    color: rgb(240, 240, 228);
+    text-align: center;
+    font-size: 40px;
+    font-family: "Audiowide", sans-serif;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 10px #000000;
+  
+    }
+
+
+
+
+table {
+    width: 100%;
+}
+.container {
+    position: relative;
+}
+
+
+div.center {
+    margin: auto;
+    width: auto;
+    
+
+}
+
+/* div{ 
+    
+    margin: auto;
+}
+*/
+
+img {
+    
+    border-radius: 25px 40px;
+    margin: 4px;  
+    height: 260px;
+    max-width: 180px;
+    border: 8px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    
+ 
+}
+
+
+
+
+
+
+            /* se eu quiser fazer as imagens desaparecerem, é só colocar o comando abaixo, quanto mais opacidade, mais ela aparece 
+
+                img {
+                    opacity: 1;
+                }
+            
+            */
+  
+  img:hover {
+    opacity: 0.5;
+  }
+                /* esse comando abaixo faz as figuras girarem 360 graus, (para comentários pressiona-se ctrl + /:)
+
+                @keyframes borda-animada {
+                    0%{.
+                        transform: rotateY(0deg);
+                    }
+                    50%{
+                        transform:rotateY(180deg);
+                    }
+                    100%{
+                        transform:rotateY(360deg);  
+                    }                      
+                }
+
+                */
+                
+                            
+
+                /*  aqui abaixo eu tenho que acrescentar após o "borda-animada" ex: 2s =2segundos infinito, para as figuras girarem sem parar 
+
+                .figura {    
+                    animation: borda-animada 2s ;
+                    animation-delay:1s;    
+                    }
+                */ 
+                
+
+                /* se eu quiser rodar cada figura separadamente, é só acrescentar figura1, figura2, figura3, etc 
+
+                .figura1 {
+                    animation: borda-animada 2s infinite;
+                    animation-delay: 1s;
+                        } 
+
+                        .figura2 {
+                            animation: borda-animada 2s infinite;
+                            animation-delay: 1s;
+                                } 
+                
+        */
+
+
+    .button {
+     
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 15px;
+        border: 2px solid rgb(34, 32, 32);
+        padding: 15px;
+        margin-top: 50px;
+        margin-left: 45%;
+        margin-right: 45%;        
+        font-size: x-large;      
+        background-color: rgb(200, 241, 160); 
+        color: rgb(20, 20, 20); 
+            }
+      
+      .button:hover {
+        background-color: #13e937;
+        color: rgb(79, 32, 209);    
+      }
+      
+      
+      .button:active {
+        background-color: #1cda3b;
+        box-shadow: 0 5px #1b5222;
+        transform: translateY(6px);
+      }
+    .footer{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 50px;    
+        text-align: center;
+        color: rgb(0, 0, 0);
+        
+        
+    }
+   
+   
+   

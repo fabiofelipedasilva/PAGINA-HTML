@@ -1,0 +1,276 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figuras</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <figure class="hidden" src="IMG/monstro1.jfif">Figura 1</figure>
+  <figure class="hidden" data-type="figura2">Figura 2</figure>
+  <figure class="hidden" data-type="figura3">Figura 3</figure>
+  <figure class="hidden" data-type="figura4">Figura 4</figure>
+  <figure class="hidden" data-type="figura5">Figura 5</figure>
+
+  <script>
+    // Função para embaralhar as figuras
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // Função para alternar a visibilidade de uma figura
+    function toggleVisibility(figure) {
+      figure.classList.toggle('hidden');
+      figure.classList.toggle('visible');
+    }
+
+    // Função para lidar com o clique em uma figura
+    function handleFigureClick(event) {
+      const figure = event.target;
+      const openFigures = document.querySelectorAll('.visible');
+
+      // Se a figura clicada já está aberta, feche todas as figuras
+      if (openFigures.length > 1) {
+        openFigures.forEach(openFigure => {
+          if (openFigure !== figure) {
+            toggleVisibility(openFigure);
+          }
+        });
+      } else {
+        // Caso contrário, verifique se a figura clicada é igual à próxima figura
+        const nextFigure = document.querySelector('.hidden');
+        if (nextFigure) {
+          if (figure.getAttribute('data-type') === nextFigure.getAttribute('data-type')) {
+            // Se as figuras são iguais, abra ambas
+            toggleVisibility(figure);
+            toggleVisibility(nextFigure);
+          } else {
+            // Se as figuras não são iguais, feche todas as figuras abertas e embaralhe as figuras
+            openFigures.forEach(openFigure => {
+              toggleVisibility(openFigure);
+            });
+            const figures = document.querySelectorAll('figure');
+            shuffleArray(figures);
+            figures.forEach(figure => {
+              if (figure.classList.contains('hidden')) {
+                figure.classList.remove('hidden');
+                figure.classList.add('visible');
+                break;
+              }
+            });
+          }
+        }
+      }
+    }
+
+    // Adicione um manipulador de eventos de clique a todas as figuras
+    document.querySelectorAll('figure').forEach(figure => figure.addEventListener('click', handleFigureClick));
+  </script>
+</body>
+</html> 
+-->
+
+<!DOCTYPE html>
+	<html lang="pt-BR"> 
+
+			<head>
+					
+					<title> JOGO DA MEMÓRIA </title>
+					<meta charset="UTF-8"/>
+					<meta name="viewport" content="width=device-width, initial-scale=1">
+
+					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"> 		
+												
+						<!-- link para usar fonte do google, tem que ser colocada entre a tag <head> 
+						para usar framework como o bootstrap, é só adcionar o link conforme mostra abaixo, não é necessário download-->
+
+						
+					
+					<link  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+					<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+					
+					<link rel="stylesheet" href="stilo.css">	
+						<script src="js.js"></script>
+					
+					
+			</head>
+
+
+						<body class="container">
+							
+							
+										<header>
+											Jogo da Memória 		
+											
+										</header>	
+										
+										<!-- <br><br><br><br><br>   html
+										<div id="figures-container"></div>
+										<button onclick="shuffleFigures()">Embaralhar figuras</button>
+										-->
+											<!-- js
+											const figures = [
+													{ id: 1, visible: false },
+													{ id: 2, visible: false },
+													{ id: 3, visible: false },
+													{ id: 4, visible: false },
+													{ id: 5, visible: false },
+													];
+
+function createFigure(id) {
+  const figure = document.createElement("figure");
+  figure.id = `figure-${id}`;
+  figure.style.display = "none";
+  figure.style.width = "100px";
+  figure.style.height = "100px";
+  figure.style.backgroundColor = `hsl(${id * 60}, 50%, 50%)`;
+  figure.addEventListener("click", toggleFigure);
+  return figure;
+}
+
+function toggleFigure() {
+  const figureId = parseInt(this.id.split("-")[1]);
+  const previouslyClickedFigureId = previouslyClickedFigure;
+  if (previouslyClickedFigureId && figureId !== previouslyClickedFigureId) {
+    figures.forEach((figure) => (figure.visible = false));
+    previouslyClickedFigure = null;
+  } else {
+    this.style.display = "block";
+    figures[figureId - 1].visible = true;
+    previouslyClickedFigure = figureId;
+  }
+}
+
+let previouslyClickedFigure = null;
+
+function shuffleFigures() {
+  figures.forEach((figure) => (figure.visible = false));
+  previouslyClickedFigure = null;
+  figures.sort(() => Math.random() - 0.5);
+  const container = document.getElementById("figures-container");
+  container.innerHTML = "";
+  figures.forEach((figure) => container.appendChild(createFigure(figure.id)));
+}
+
+const container = document.getElementById("figures-container");
+figures.forEach((figure) => container.appendChild(createFigure(figure.id)));
+											
+											-->
+											
+										<!-- (para comentários pressiona-se ctrl + /:), é diferente no html e o no CSS -->
+										<div class="center">
+										
+															<table>
+																<td>
+																	<tr>																		
+																		
+																		
+																			<img src="IMG/monstro1.jfif" >	
+																																	
+																			
+																		
+																			<img src="IMG/monstro2.jfif">
+																																			
+																																														
+																			<img src="IMG/monstro3.png">																			
+																																													
+																			<img src="IMG/monstro4.jfif">																	
+																																											
+																			<img src="IMG/monstro5.jfif" >																			
+																		
+																			<img src="IMG/monstro6.jfif" >
+
+																			<img src="IMG/monstro7.png" >
+
+																			<img src="IMG/monstro8.jfif">
+
+																			<img src="IMG/monstro9.jfif">
+
+																			<img src="IMG/monstro10.png">
+
+																			<img src="IMG/monstro11.jfif">
+
+																			<img src="IMG/monstro12.jfif">
+
+																			<img src="IMG/monstro13.png">
+
+																			<img src="IMG/monstro14.jfif">
+
+																			<img src="IMG/monstro15.jfif">
+
+																			<img src="IMG/monstro16.png">
+
+																			<img src="IMG/monstro17.jfif">
+
+																			<img src="IMG/monstro18.jfif">
+
+																			<img src="IMG/monstro19.jfif">
+
+																			<img src="IMG/monstro20.jfif">
+
+																			<img src="IMG/monstro21.jfif">
+
+																			<img src="IMG/monstro22.jfif">
+
+																			<img src="IMG/monstro23.jfif">
+
+																			<img src="IMG/monstro24.jfif">
+
+																		
+
+																	</tr>
+																		
+																</td>
+																																
+																		
+															
+															
+														
+															<br><br>
+																
+														
+											
+										
+															
+															<button class="button" onclick="alert('FAÇA SEU CADASTRO!')">Começar!</button>
+															
+
+														
+
+
+																
+																	<div class="footer">
+																			 Autor: Fabio Felipe da Silva &#174; - 2023 <a href="mailto:hege@example.com"> fabiofelipe_sh@hotmail.com </a>
+																	
+																	</div>
+																</table>		
+															</div>		
+										
+									
+
+							    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+								<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+								<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+
+									
+						</body>
+
+
+
+	</html>
+
+
+	
